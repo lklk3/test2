@@ -1,6 +1,6 @@
 <template>
-    <div>
-       <div id="myCh" :style="{width: '540px', height: '450px'}"></div>
+    <div class="mych">
+       <div id="myCh" :style="{width: '500px', height: '400px'}" ></div>
     </div>
 </template>
 <script>
@@ -18,7 +18,7 @@ export default {
         myChart.setOption({
             title: {
                 text: "Market Value",
-                subtext: "$206789"
+                subtext: "$20467"
             },
             tooltip: {
                 trigger: "axis"
@@ -26,9 +26,12 @@ export default {
             legend: {
                 data: ["Day", "Night"],
                 x: "right",
-                y: "bottom"
+                y: "bottom",
+                itemGap: 11,
+                itemHeight: 12
             },
             toolbox: {
+                show: false,
                 feature: {
                     mark: {
                         show: true
@@ -47,54 +50,47 @@ export default {
                     saveAsImage: {
                         show: true
                     }
-                },
-                show: false
+                }
             },
             calculable: true,
             xAxis: [
                 {
                     type: "value",
-                    boundaryGap: [0, 0.01],
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
+                    splitArea: {
                         show: false
                     },
                     splitLine: {
                         show: false
                     },
-                    splitArea: {
+                    axisLabel: {
                         show: false
                     },
-                    nameTextStyle: {
-                        fontSize: 0
+                    axisLine: {
+                        show: false
                     },
-                    axisLabel: {
-                        textStyle: {
-                            fontSize: 0
-                        }
+                    axisTick: {
+                        show: false
                     }
                 }
             ],
             yAxis: [
                 {
                     type: "category",
-                    data: ["Mon", "Two", "Three", "Four", "Five", "Six"],
-                    axisLine: {
-                        show: false
+                    data: ["july", "april", "may", "june", "March"],
+                    axisLabel: {
+                        show: true
                     },
                     axisTick: {
-                        show: false
-                    },
-                    splitLine: {
                         show: false
                     },
                     splitArea: {
                         show: false
                     },
-                    axisLabel: {
-                        margin: 24
+                    splitLine: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false
                     }
                 }
             ],
@@ -102,16 +98,33 @@ export default {
                 {
                     name: "Day",
                     type: "bar",
-                    data: [182, 234, 290, 256, 233, 299]
+                    data: [234, 189, 200, 162, 150],
+                    itemStyle: {
+                        normal: {
+                            color: "rgb(105, 165, 225)"
+                        }
+                    },
+                    barWidth: 5,
+                    barGap: "50%",
+                    barCategoryGap: "50%",
+                    barMinHeight: 0
                 },
                 {
                     name: "Night",
                     type: "bar",
-                    data: [193, 256, 302, 243, 289, 199]
+                    data: [234, 256, 121, 174, 170],
+                    barWidth: 5,
+                    itemStyle: {
+                        normal: {
+                            color: "rgb(93, 208, 84)"
+                        }
+                    },
+                    barGap: "50%",
+                    barCategoryGap: "50%"
                 }
             ],
+            color: ["rgb(255, 0, 0)", "#87cefa", "#da70d6", "rgb(170, 255, 86)", "#6495ed", "#ff69b4", "#ba55d3", "#cd5c5c", "#ffa500", "#40e0d0", "#1e90ff", "#ff6347", "#7b68ee", "#00fa9a", "#ffd700", "#6699FF", "#ff6666", "#3cb371", "#b8860b", "#30e0e0"],
             grid: {
-                x: 71,
                 borderWidth: 0
             }
         })
@@ -119,6 +132,9 @@ export default {
   }
 }
 </script>
-<style>
-    
+<style lang="less" scoped>
+    .mych{
+        padding-top: 30px;
+        padding-left: 30px;
+    }
 </style>

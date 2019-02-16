@@ -17,64 +17,97 @@
             drawLine(){
                 let myChart = this.$echarts.init(document.getElementById('myChone'))
                 myChart.setOption({
-    legend: {
-        data: ["高度(km)与气温(°C)变化关系"]
-    },
-    toolbox: {
-        feature: {
-            dataView: {
-                show: true,
-                readOnly: true
-            },
-            magicType: {
-                show: false,
-                type: ["line", "bar"]
-            },
-            restore: {
-                show: true
-            },
-            saveAsImage: {
-                show: true
-            },
-            mark: {
-                show: true
-            }
-        }
-    },
-    calculable: true,
-    tooltip: {
-        trigger: "axis"
-    },
-    xAxis: [
-        {
-            type: "value",
-            name: "°C"
-        }
-    ],
-    yAxis: [
-        {
-            type: "category",
-            name: "km",
-            axisLine: {
-                onZero: false
-            },
-            boundaryGap: false,
-            data: ["0", "10", "20", "30", "40", "50", "60", "70", "80"]
-        }
-    ],
-    series: [
-        {
-            name: "高度(km)与气温(°C)变化关系",
-            type: "line",
-            smooth: true,
-            data: [0, 15, 21, 26, 27, 30, 31, 33, 36]
-        }
-    ],
-    title: {
-        text: "Analytics",
-        x: "left"
-    }
-})
+                    legend: {
+                        data: ["Antials"],
+                        x: "left",
+                        itemWidth: 20,
+                        textStyle: {
+                            fontSize: 20
+                        },
+                        backgroundColor: "rgba(0, 0, 0, 0)",
+                        itemHeight: 14
+                    },
+                    toolbox: {
+                        show: false,
+                        feature: {
+                            mark: {
+                                show: true
+                            },
+                            dataView: {
+                                show: true,
+                                readOnly: true
+                            },
+                            magicType: {
+                                show: false,
+                                type: ["line", "bar"]
+                            },
+                            restore: {
+                                show: true
+                            },
+                            saveAsImage: {
+                                show: true
+                            }
+                        }
+                    },
+                    calculable: true,
+                    tooltip: {
+                        trigger: "axis"
+                    },
+                    xAxis: [
+                        {
+                            type: "value",
+                            axisTick: {
+                                show: false
+                            },
+                            splitLine: {
+                                show: false
+                            },
+                            splitArea: {
+                                show: false
+                            },
+                            axisLine: {
+                                show: false
+                            },
+                            axisLabel: {
+                                show: true
+                            },
+                            scale: true
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: "category",
+                            axisLine: {
+                                onZero: false,
+                                show: false
+                            },
+                            boundaryGap: false,
+                            data: ["june", "july", "angluar"],
+                            axisTick: {
+                                show: false
+                            },
+                            axisLabel: {
+                                show: false
+                            }
+                        }
+                    ],
+                    series: [
+                        {
+                            name: "Antials",
+                            type: "line",
+                            smooth: true,
+                            data: [10, 47, 60],
+                            itemStyle: {
+                                normal: {
+                                    color: "rgb(0, 127, 255)"
+                                }
+                            }
+                        }
+                    ],
+                    grid: {
+                        borderWidth: 0
+                    }
+                })
             }
           }
     }
