@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <div id="myChone" :style="{width: '540px', height: '450px'}"></div>
+    <div class="tt">
+      <div id="myChone" :style="{width: '490px', height: '260px'}"></div>
     </div>
 </template>
 <script>
@@ -17,6 +17,12 @@
             drawLine(){
                 let myChart = this.$echarts.init(document.getElementById('myChone'))
                 myChart.setOption({
+                    title : {
+                        text: '25134',
+                        x:'center',
+                        y:'30px',
+                        subtext: 'Follows'
+                    },
                     legend: {
                         data: ["Antials"],
                         x: "left",
@@ -55,27 +61,6 @@
                     },
                     xAxis: [
                         {
-                            type: "value",
-                            axisTick: {
-                                show: false
-                            },
-                            splitLine: {
-                                show: false
-                            },
-                            splitArea: {
-                                show: false
-                            },
-                            axisLine: {
-                                show: false
-                            },
-                            axisLabel: {
-                                show: true
-                            },
-                            scale: true
-                        }
-                    ],
-                    yAxis: [
-                        {
                             type: "category",
                             axisLine: {
                                 onZero: false,
@@ -83,11 +68,35 @@
                             },
                             boundaryGap: false,
                             data: ["june", "july", "angluar"],
+                            splitLine: {
+                                show: false
+                            },
+                            splitArea: {
+                                show: false
+                            },
+                            axisLabel: {
+                                show: true
+                            },
                             axisTick: {
+                                show: false
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: "value",
+                            axisTick: {
+                                show: false
+                            },
+                            axisLine: {
                                 show: false
                             },
                             axisLabel: {
                                 show: false
+                            },
+                            scale: true,
+                            splitLine: {
+                                show: true
                             }
                         }
                     ],
@@ -112,6 +121,9 @@
           }
     }
 </script>
-<style>
-    
+<style lang="less" scoped>
+   .tt{
+     padding-top: 100px;
+     padding-left: 30px;
+   } 
 </style>
